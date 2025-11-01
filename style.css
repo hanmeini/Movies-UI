@@ -1,0 +1,460 @@
+/* Import Font dari kode Anda */
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Lexend+Deca:wght@100..900&display=swap');
+
+/* Variabel Global untuk konsistensi */
+:root {
+    --bg-color: #141414;
+    --text-color: #ffffff;
+    --primary-color: #E50914; /* Anda bisa ganti ini ke --primary-color: #8B5CF6; (ungu) jika mau */
+    --card-bg: #222;
+    --footer-bg: #111;
+    /* Menghapus --font-main */
+}
+
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Menggunakan font "Lexend Deca" dari kode Anda */
+    font-family: "Lexend Deca", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Agar layout 1440px di tengah */
+    max-width: 1440px; /* */
+    margin: 0 auto;
+    overflow-x: hidden; /* Hindari scroll horizontal */
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Pertemuan 2: Header & Navbar */
+header {
+    width: 100%;
+    /* Kita buat sedikit transparan agar menyatu dengan hero */
+    background-color: rgba(10, 2, 20, 0.5); 
+    backdrop-filter: blur(5px); /* Efek blur */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1440px; /* */
+    height: 80px; /* */
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px; /* */
+    height: 60px; /* */
+}
+
+.menu {
+    display: flex; /* */
+}
+
+.menu li {
+    margin: 0 12px; /* Total jarak antar menu 24px */
+}
+
+.menu a {
+    font-size: 16px; /* */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+.account img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Pertemuan 2: Hero Section (Telah Dimodifikasi dengan CSS Anda) */
+.hero {
+    height: 90vh; /* */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Teks tetap di kiri sesuai mockup */
+    padding: 0 60px;
+    text-align: left;
+    position: relative; /* Diperlukan agar ::before berfungsi */
+    overflow: hidden; /* Menjaga agar gradien tidak 'bocor' */
+}
+
+/* TAMBAHAN BARU: Menerapkan background blur Anda di pseudo-elemen */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* GANTI URL INI dengan path Anda yang benar */
+    /* Saya gunakan placeholder agar terlihat */
+    background: url('/assets/img/bg-lgn.jpg') repeat;
+    /* background: url('/assets/img/bg-lgn.jpg') repeat; */ /* <-- Ini path dari kode Anda */
+    
+    background-size: cover;
+    filter: blur(6px);
+    animation: moveBg 30s linear infinite;
+    z-index: -1; /* Taruh di belakang konten */
+}
+
+
+.hero h1 {
+    font-size: 64px; /* */
+    font-weight: 700;
+    margin-bottom: 20px;
+    /* Menambahkan shadow agar lebih terbaca di atas background dinamis */
+    text-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    position: relative; /* Pastikan konten di atas background */
+    z-index: 2;
+}
+
+.hero p {
+    font-size: 18px; /* */
+    line-height: 28px; /* */
+    max-width: 494px; /* */
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    position: relative; /* Pastikan konten di atas background */
+    z-index: 2;
+}
+
+.btn-cta {
+    height: 48px; /* */
+    width: auto; /* Ubah agar menyesuaikan konten */
+    padding: 0 24px; /* Tambahkan padding */
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 6px; /* */
+    font-size: 16px; /* */
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: relative; /* Pastikan konten di atas background */
+    z-index: 2;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Keyframes untuk animasi background (dari kode Anda) */
+@keyframes moveBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+
+/* Pertemuan 2: Card Film/Serial */
+.film-row {
+    padding: 20px 40px;
+    margin-top: 20px;
+}
+
+.film-row h2 {
+    font-size: 20px; /* */
+    font-weight: 600; /* */
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: grid; /* */
+    /* Membuat kolom responsif dengan ukuran minimum 180px */
+    grid-template-columns: repeat(auto-fill, 180px);
+    gap: 24px; /* */
+    justify-content: space-between; /* Agar rapi */
+}
+
+/* --- PERUBAHAN EFEK HOVER KARTU --- */
+
+.film-card {
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    /* Tambahkan position relative */
+    position: relative;
+    transition: transform 0.3s; /* Hapus transisi transform dari sini */
+}
+
+/* Hapus :hover di sini agar tidak 'loncat' */
+/* .film-card:hover {
+    transform: scale(1.05);
+} */
+
+.film-card img {
+    width: 180px; /* */
+    height: 270px; /* */
+    display: block;
+    object-fit: cover;
+    /* Tambahkan transisi untuk efek scale */
+    transition: transform 0.4s ease;
+}
+
+/* Efek scale pada gambar saat card di-hover */
+.film-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Hapus styling .film-card h3 yang lama */
+/* .film-card h3 { ... } */
+
+
+/* KONTEN HOVER BARU */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    
+    /* Gradien agar teks terbaca */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
+    
+    /* Sembunyikan by default */
+    opacity: 0;
+    transform: translateY(15px);
+    
+    /* Transisi */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* Tampilkan saat card di-hover */
+.film-card:hover .card-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-content h3 {
+    font-size: 16px; /* Sedikit lebih besar dari spek asli (15px) agar lebih jelas */
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.card-content p {
+    font-size: 12px;
+    color: #ccc;
+    /* Batasi 2 baris */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+/* --- AKHIR PERUBAHAN EFEK HOVER KARTU --- */
+
+
+/* Pertemuan 2: Footer */
+footer {
+    width: 100%;
+    margin-top: 50px;
+    background-color: var(--footer-bg);
+    padding: 40px 60px;
+    display: grid; /* */
+    grid-template-columns: repeat(4, 1fr); /* */
+    gap: 20px;
+    min-height: 240px; /* */
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    font-size: 14px; /* */
+    line-height: 22px; /* */
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: var(--text-color);
+}
+
+
+/* --- CSS untuk Interaktivitas JS --- */
+
+/* Rating Section */
+.rating-section {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--card-bg);
+    margin: 40px;
+    border-radius: 8px;
+}
+.rating .star {
+    font-size: 32px; /* */
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.rating .star:hover,
+.rating .star.selected {
+    color: gold;
+}
+
+
+/* Modal Video Player */
+.modal {
+    display: none; /* Sembunyi by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    position: relative;
+    margin: 2.5vh auto; /* Pusatkan modal */
+    width: 80%;
+    max-width: 1200px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.video-player-container {
+    position: relative;
+    padding-top: 56.25%; /* Aspect ratio 16:9 */
+    height: 90vh; /* */
+}
+
+.video-player-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* */
+    height: 100%;
+}
+
+.modal-content h3 {
+    text-align: left;
+    margin-top: 15px;
+    font-size: 28px; /* */
+}
+
+
+/* --- Media Query untuk Responsif --- */
+@media (max-width : 768px)  {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    /* Kurangi padding di menu mobile */
+    .menu li {
+        margin: 0 8px;
+    }
+    .menu a {
+        font-size: 14px;
+    }
+
+
+    .hero {
+        padding: 0 20px;
+        align-items: center; /* Pusatkan di mobile */
+        text-align: center; /* Pusatkan di mobile */
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .btn-cta {
+        width: 160px; /* Sedikit lebih besar untuk tombol play */
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .film-row {
+        padding: 20px; /* Kurangi padding di mobile */
+    }
+
+    .card-container {
+        /* Ukuran card lebih kecil di mobile */
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
+    }
+
+    .film-card img {
+        /* Sesuaikan ukuran gambar dengan grid */
+        width: 100%; /* Buat gambar mengisi card */
+        height: 210px; /* Tetapkan tinggi */
+    }
+
+    /* Sesuaikan font di hover card mobile */
+    .card-content h3 {
+        font-size: 14px;
+    }
+    .card-content p {
+        font-size: 10px;
+        -webkit-line-clamp: 2; /* Tetap 2 baris */
+        line-clamp: 2;
+    }
+
+
+    footer {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di mobile */
+        padding: 30px 20px;
+    }
+}
+

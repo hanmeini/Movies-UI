@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Website - Cang & Kruk</title>
+    <!-- Hubungkan ke file CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Menambahkan Font Awesome untuk ikon (opsional, tapi bagus untuk tombol play) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Pertemuan 1: Header & Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <!-- Menggunakan logo Anda -->
+                <img src="/assets/img/iconlogo.png" alt="Logo" onerror="this.src='https://placehold.co/60x60/111/FFF?text=Logo';">
+            </div>
+            <ul class="menu">
+                <!-- Menu -->
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">FILMS</a></li>
+                <li><a href="#">SERIES</a></li>
+                <li><a href="#">GENRE</a></li>
+            </ul>
+            <div class="account">
+                <!-- Akun (gunakan ikon placeholder yang lebih baik) -->
+                <img src="https://placehold.co/40x40/8B5CF6/FFFFFF?text=User" alt="Akun">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Pertemuan 1: Main Content -->
+    <main>
+        <!-- Section Hero -->
+        <section class="hero">
+            <h1>Cang & Kruk</h1> <!-- Judul Hero -->
+            <p>
+                Saksikan petualangan kocak Cang dan Kruk dalam webseries animasi terbaru!
+                Dua sahabat dengan kepribadian yang bertolak belakang ini selalu saja
+                terjebak dalam situasi yang tak terduga.
+            </p> <!-- Paragraf Sinopsis -->
+            <button id="play-hero-btn" class="btn-cta">
+                <i class="fas fa-play" style="margin-right: 8px;"></i> Watch Now
+            </button> <!-- Tombol CTA -->
+        </section>
+
+        <!-- Section Most Viewed Films -->
+        <section class="film-row">
+            <h2>Most Viewed Films</h2> <!-- Heading -->
+            <div class="card-container">
+                
+                <!-- Card Film 1 (Struktur Diperbarui) -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?movie,poster,action" alt="Film 1">
+                    <div class="card-content">
+                        <h3>The Red Escape</h3>
+                        <p>Seorang mata-mata harus melarikan diri dari kejaran agen ganda.</p>
+                    </div>
+                </article>
+                
+                <!-- Card Film 2 -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?movie,poster,scifi" alt="Film 2">
+                    <div class="card-content">
+                        <h3>Cyber Dawn</h3>
+                        <p>Di dunia masa depan, seorang hacker menemukan rahasia besar.</p>
+                    </div>
+                </article>
+
+                <!-- Card Film 3 -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?movie,poster,comedy" alt="Film 3">
+                    <div class="card-content">
+                        <h3>Jungle Laugh</h3>
+                        <p>Komedi tentang sekelompok turis yang tersesat di Amazon.</p>
+                    </div>
+                </article>
+
+                <!-- Card Film 4 -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?movie,poster,war" alt="Film 4">
+                    <div class="card-content">
+                        <h3>Echoes of War</h3>
+                        <p>Sebuah drama perang yang mengharukan dari sudut pandang warga sipil.</p>
+                    </div>
+                </article>
+
+                <!-- Card Film 5 -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?movie,poster,thriller" alt="Film 5">
+                    <div class="card-content">
+                        <h3>Mind's Maze</h3>
+                        <p>Thriller psikologis tentang ingatan yang hilang.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Section Most Popular Serials -->
+        <section class="film-row">
+            <h2>Most Popular Serials</h2> <!-- Heading -->
+            <div class="card-container">
+                
+                <!-- Card Serial 1 (Struktur Diperbarui) -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?series,poster,space" alt="Serial 1">
+                    <div class="card-content">
+                        <h3>Stellar Voyage</h3>
+                        <p>Season 2: Kru kapal luar angkasa menjelajahi galaksi baru.</p>
+                    </div>
+                </article>
+
+                <!-- Card Serial 2 -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?series,poster,fantasy" alt="Serial 2">
+                    <div class="card-content">
+                        <h3>The King's Heir</h3>
+                        <p>Intrik politik dan perebutan tahta di kerajaan fantasi.</p>
+                    </div>
+                </article>
+
+                <!-- Card Serial 3 -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?series,poster,tech" alt="Serial 3">
+                    <div class="card-content">
+                        <h3>Silicon Dreams</h3>
+                        <p>Kisah startup teknologi yang mencoba mengubah dunia.</p>
+                    </div>
+                </article>
+
+                <!-- Card Serial 4 -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?series,poster,nature" alt="Serial 4">
+                    <div class="card-content">
+                        <h3>Deep Dive</h3>
+                        <p>Dokumenter yang mengungkap misteri kehidupan laut dalam.</p>
+                    </div>
+                </article>
+
+                <!-- Card Serial 5 -->
+                <article class="film-card">
+                    <!-- GAMBAR DIPERBARUI -->
+                    <img src="https://source.unsplash.com/180x270/?series,poster,animation" alt="Serial 5">
+                    <div class="card-content">
+                        <h3>Cang & Kruk: S1</h3>
+                        <p>Episode 1: Awal mula persahabatan mereka yang aneh.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Section Rating (untuk JS) -->
+        <section class="rating-section">
+            <h2>What's your Reaction?</h2>
+            <div class="rating">
+                <!-- Icon bintang -->
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pertemuan 1: Footer -->
+    <footer>
+        <!-- 4 Kolom -->
+        <div class="footer-column">
+            <h4>Movies</h4>
+            <ul>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Comedy</a></li>
+                <li><a href="#">Horror</a></li>
+                <li><a href="#">Drama</a></li>
+                <li><a href="#">Sci-Fi</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Serials</h4>
+            <ul>
+                <li><a href="#">Webseries</a></li>
+                <li><a href="#">Anime</a></li>
+                <li><a href="#">K-Drama</a></li>
+                <li><a href="#">Documentary</a></li>
+                <li><a href="#">Fantasy</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="#">support@email.com</a></li>
+                <li><a href="#">(021) 123-456</a></li>
+                <li><a href="#">Social Media</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Modal untuk Video Player (disembunyikan by default) -->
+    <!-- Sesuai permintaan JS: "memunculkan video player" -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="video-player-container">
+                <!-- Lebar penuh, tinggi 90vh -->
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/M-R-y8-0k-g" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h3>Cang & Kruk (2018): 1x1 - "Episode Perdana"</h3> <!-- Judul -->
+        </div>
+    </div>
+
+    <!-- Hubungkan ke file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
