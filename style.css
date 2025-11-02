@@ -1,17 +1,13 @@
-/* Import Font dari kode Anda */
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Lexend+Deca:wght@100..900&display=swap');
 
-/* Variabel Global untuk konsistensi */
 :root {
     --bg-color: #141414;
     --text-color: #ffffff;
-    --primary-color: #E50914; /* Anda bisa ganti ini ke --primary-color: #8B5CF6; (ungu) jika mau */
+    --primary-color: #E50914;
     --card-bg: #222;
     --footer-bg: #111;
-    /* Menghapus --font-main */
 }
 
-/* Reset Dasar */
 * {
     margin: 0;
     padding: 0;
@@ -19,14 +15,12 @@
 }
 
 body {
-    /* Menggunakan font "Lexend Deca" dari kode Anda */
     font-family: "Lexend Deca", sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    /* Agar layout 1440px di tengah */
-    max-width: 1440px; /* */
+    max-width: 1440px;
     margin: 0 auto;
-    overflow-x: hidden; /* Hindari scroll horizontal */
+    overflow-x: hidden;
 }
 
 a {
@@ -38,12 +32,10 @@ ul {
     list-style: none;
 }
 
-/* Pertemuan 2: Header & Navbar */
 header {
     width: 100%;
-    /* Kita buat sedikit transparan agar menyatu dengan hero */
-    background-color: rgba(10, 2, 20, 0.5); 
-    backdrop-filter: blur(5px); /* Efek blur */
+    background-color: rgba(10, 2, 20, 0.5);
+    backdrop-filter: blur(5px);
     position: absolute;
     top: 0;
     left: 0;
@@ -53,8 +45,8 @@ header {
 
 .navbar {
     width: 100%;
-    max-width: 1440px; /* */
-    height: 80px; /* */
+    max-width: 1440px;
+    height: 80px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
@@ -63,20 +55,20 @@ header {
 }
 
 .logo img {
-    width: 60px; /* */
-    height: 60px; /* */
+    width: 60px;
+    height: 60px;
 }
 
 .menu {
-    display: flex; /* */
+    display: flex;
 }
 
 .menu li {
-    margin: 0 12px; /* Total jarak antar menu 24px */
+    margin: 0 12px;
 }
 
 .menu a {
-    font-size: 16px; /* */
+    font-size: 16px;
     font-weight: 600;
     transition: color 0.3s;
 }
@@ -92,21 +84,18 @@ header {
     cursor: pointer;
 }
 
-/* Pertemuan 2: Hero Section (Telah Dimodifikasi dengan CSS Anda) */
 .hero {
-    height: 90vh; /* */
-    
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Teks tetap di kiri sesuai mockup */
+    align-items: flex-start;
     padding: 0 60px;
     text-align: left;
-    position: relative; /* Diperlukan agar ::before berfungsi */
-    overflow: hidden; /* Menjaga agar gradien tidak 'bocor' */
+    position: relative;
+    overflow: hidden;
 }
 
-/* TAMBAHAN BARU: Menerapkan background blur Anda di pseudo-elemen */
 .hero::before {
     content: '';
     position: absolute;
@@ -114,48 +103,42 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* GANTI URL INI dengan path Anda yang benar */
-    /* Saya gunakan placeholder agar terlihat */
     background: url('/assets/img/bg-lgn.jpg') repeat;
-    /* background: url('/assets/img/bg-lgn.jpg') repeat; */ /* <-- Ini path dari kode Anda */
-    
     background-size: cover;
     filter: blur(6px);
     animation: moveBg 30s linear infinite;
-    z-index: -1; /* Taruh di belakang konten */
+    z-index: -1;
 }
 
 
 .hero h1 {
-    font-size: 64px; /* */
+    font-size: 64px;
     font-weight: 700;
     margin-bottom: 20px;
-    /* Menambahkan shadow agar lebih terbaca di atas background dinamis */
-    text-shadow: 0 0 10px rgba(0,0,0,0.5); 
-    position: relative; /* Pastikan konten di atas background */
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: relative;
     z-index: 2;
 }
 
 .hero p {
-    font-size: 18px; /* */
-    line-height: 28px; /* */
-    max-width: 494px; /* */
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 494px;
     margin-bottom: 30px;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    position: relative; /* Pastikan konten di atas background */
+    position: relative;
     z-index: 2;
 }
 
 .btn-cta {
-    height: 48px; /* */
-    width: auto; /* Ubah agar menyesuaikan konten */
-    padding: 0 24px; /* Tambahkan padding */
+    height: 48px;
+    width: auto;
+    padding: 0 24px;
     background-color: var(--primary-color);
     color: var(--text-color);
     border: none;
-    border-radius: 6px; /* */
-    font-size: 16px; /* */
+    border-radius: 6px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -163,7 +146,7 @@ header {
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    position: relative; /* Pastikan konten di atas background */
+    position: relative;
     z-index: 2;
 }
 
@@ -172,7 +155,6 @@ header {
     box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
-/* Keyframes untuk animasi background (dari kode Anda) */
 @keyframes moveBg {
     0% {
         background-position: 0 0;
@@ -182,88 +164,63 @@ header {
     }
 }
 
-
-/* Pertemuan 2: Card Film/Serial */
 .film-row {
     padding: 20px 40px;
     margin-top: 20px;
 }
 
 .film-row h2 {
-    font-size: 20px; /* */
-    font-weight: 600; /* */
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
 .card-container {
-    display: grid; /* */
-    /* Membuat kolom responsif dengan ukuran minimum 180px */
+    display: grid;
     grid-template-columns: repeat(auto-fill, 180px);
-    gap: 20px; /* */
-    justify-content: space-between; /* Agar rapi */
+    gap: 20px;
+    justify-content: space-between;
 }
-
-/* --- PERUBAHAN EFEK HOVER KARTU --- */
 
 .film-card {
     background-color: var(--card-bg);
     border-radius: 4px;
     overflow: hidden;
-    /* Tambahkan position relative */
     position: relative;
-    transition: transform 0.3s; /* Hapus transisi transform dari sini */
+    transition: transform 0.3s;
 }
 
-/* Hapus :hover di sini agar tidak 'loncat' */
-/* .film-card:hover {
-    transform: scale(1.05);
-} */
-
 .film-card img {
-    width: 190px; /* */
-    height: 270px; /* */
+    width: 190px;
+    height: 270px;
     display: block;
     object-fit: cover;
-    /* Tambahkan transisi untuk efek scale */
     transition: transform 0.4s ease;
 }
 
-/* Efek scale pada gambar saat card di-hover */
 .film-card:hover img {
     transform: scale(1.1);
 }
 
-/* Hapus styling .film-card h3 yang lama */
-/* .film-card h3 { ... } */
-
-
-/* KONTEN HOVER BARU */
 .card-content {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 12px;
-    
-    /* Gradien agar teks terbaca */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
-    
-    /* Sembunyikan by default */
     opacity: 0;
     transform: translateY(15px);
-    
-    /* Transisi */
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
-/* Tampilkan saat card di-hover */
 .film-card:hover .card-content {
     opacity: 1;
     transform: translateY(0);
 }
 
 .card-content h3 {
-    font-size: 16px; /* Sedikit lebih besar dari spek asli (15px) agar lebih jelas */
+    font-size: 16px;
     font-weight: 600;
     color: #fff;
     margin-bottom: 4px;
@@ -272,7 +229,6 @@ header {
 .card-content p {
     font-size: 12px;
     color: #ccc;
-    /* Batasi 2 baris */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
@@ -280,19 +236,15 @@ header {
     overflow: hidden;
 }
 
-/* --- AKHIR PERUBAHAN EFEK HOVER KARTU --- */
-
-
-/* Pertemuan 2: Footer */
 footer {
     width: 100%;
     margin-top: 50px;
     background-color: var(--footer-bg);
     padding: 40px 60px;
-    display: grid; /* */
-    grid-template-columns: repeat(4, 1fr); /* */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    min-height: 240px; /* */
+    min-height: 240px;
 }
 
 .footer-column h4 {
@@ -305,8 +257,8 @@ footer {
 }
 
 .footer-column a {
-    font-size: 14px; /* */
-    line-height: 22px; /* */
+    font-size: 14px;
+    line-height: 22px;
     color: #aaa;
     transition: color 0.3s;
 }
@@ -315,10 +267,6 @@ footer {
     color: var(--text-color);
 }
 
-
-/* --- CSS untuk Interaktivitas JS --- */
-
-/* Rating Section */
 .rating-section {
     text-align: center;
     padding: 40px;
@@ -327,7 +275,7 @@ footer {
     border-radius: 8px;
 }
 .rating .star {
-    font-size: 32px; /* */
+    font-size: 32px;
     color: #555;
     cursor: pointer;
     transition: color 0.2s;
@@ -337,10 +285,8 @@ footer {
     color: gold;
 }
 
-
-/* Modal Video Player */
 .modal {
-    display: none; /* Sembunyi by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -353,7 +299,7 @@ footer {
 
 .modal-content {
     position: relative;
-    margin: 2.5vh auto; /* Pusatkan modal */
+    margin: 2.5vh auto;
     width: 80%;
     max-width: 1200px;
 }
@@ -370,57 +316,61 @@ footer {
 
 .video-player-container {
     position: relative;
-    padding-top: 56.25%; /* Aspect ratio 16:9 */
-    height: 90vh; /* */
+    padding-top: 56.25%;
+    height: 90vh;
 }
 
 .video-player-container iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* */
+    width: 100%;
     height: 100%;
 }
 
 .modal-content h3 {
     text-align: left;
     margin-top: 15px;
-    font-size: 28px; /* */
+    font-size: 28px;
 }
 #detail-page {
     width: 100%;
-    /* Beri ruang untuk header absolut/fixed Anda */
-    padding-top: 80px; 
+    padding-top: 80px;
 }
 
-/* Kelas utilitas untuk menyembunyikan/menampilkan halaman */
 .hidden {
-    display: none !important; /* Gunakan !important untuk memastikan */
+    display: none !important;
 }
 
-/* Tombol Kembali */
 #back-to-home {
     position: absolute;
-    top: 100px; /* Di bawah header (80px) + 20px padding */
+    top: 100px;
     left: 40px;
-    z-index: 5; /* Di atas hero, di bawah header */
+    z-index: 5;
     background-color: rgba(0,0,0,0.5);
     border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 #back-to-home:hover {
     background-color: rgba(255,255,255,0.1);
 }
 
-/* Hero Halaman Detail */
 .detail-hero {
-    height: 90vh; /* Sesuai Spek PDF */
+    height: 90vh;
     position: relative;
     display: flex;
     align-items: center;
     overflow: hidden;
     padding: 0 60px;
-    /* Tarik ke atas di belakang header transparan */
-    margin-top: -80px; 
+    margin-top: -80px;
 }
 
 .detail-hero-bg {
@@ -431,9 +381,8 @@ footer {
     height: 100%;
     background-size: cover;
     background-position: center;
-    /* Efek blur dan gelap yang kuat */
     filter: blur(20px) brightness(0.5);
-    transform: scale(1.1); /* Hindari tepi yang blur */
+    transform: scale(1.1);
     z-index: 1;
 }
 
@@ -446,11 +395,11 @@ footer {
 }
 
 .detail-poster {
-    width: 250px; /* Lebih besar dari kartu */
+    width: 250px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    flex-shrink: 0; /* Jangan biarkan gambar menyusut */
+    flex-shrink: 0;
 }
 
 .detail-info {
@@ -458,7 +407,7 @@ footer {
 }
 
 #detail-title {
-    font-size: 36px; /* Sesuai Spek PDF (32-36px) */
+    font-size: 36px;
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
@@ -477,19 +426,16 @@ footer {
     margin: 20px 0;
 }
 
-
-/* --- Bagian Detail Tambahan --- */
 .more-details {
     padding: 40px 60px;
 }
 
-/* PENTING: Bungkus .details-box dan .cast-list dalam <div> ini di HTML Anda */
 .details-top-section {
     display: flex;
     justify-content: space-between;
     gap: 40px;
     margin-bottom: 40px;
-    flex-wrap: wrap; /* Agar responsif */
+    flex-wrap: wrap;
 }
 
 .details-box h2,
@@ -504,12 +450,12 @@ footer {
 }
 
 .details-box {
-    width: 600px; /* Sesuai Spek PDF */
+    width: 600px;
     flex-shrink: 0;
 }
 
 .details-box p {
-    font-size: 16px; /* Sesuai Spek PDF (16-18px) */
+    font-size: 16px;
     line-height: 1.7;
     color: #ccc;
 }
@@ -521,36 +467,49 @@ footer {
 
 .cast-list {
     width: 100%;
-    flex-grow: 1; /* Ambil sisa ruang */
+    margin-top: 20px;
+    margin-bottom: 20px;
     min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.cast-list h2 {
+    max-width: 60px;
+}
+.cast-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
-.cast-member {
+.cast-member {  
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 15px;
+    background-color: var(--card-bg);
+    padding: 8px 12px;
+    border-radius: 40px;
 }
 
 .cast-member img {
-    width: 40px; /* Sesuai Spek PDF (40x40px) */
-    height: 40px; /* Sesuai Spek PDF (40x40px) */
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .cast-member span {
-    font-size: 16px; /* Sesuai Spek PDF (16px) */
+    font-size: 16px;
 }
 
-/* Daftar Episode */
 .episodes-list {
-    width: 100%; /* Sesuai Spek PDF (approx 1200px) */
+    width: 100%;
 }
 
 .episode-row {
     width: 100%;
-    min-height: 64px; /* Sesuai Spek PDF (64px) */
+    min-height: 64px;
     background-color: var(--card-bg);
     border-radius: 4px;
     margin-bottom: 10px;
@@ -567,15 +526,15 @@ footer {
 }
 
 .episode-row img {
-    width: 80px; /* Sesuai Spek PDF (80x80px) */
-    height: 80px; /* Sesuai Spek PDF (80x80px) */
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 4px;
     flex-shrink: 0;
 }
 
 .episode-info h3 {
-    font-size: 18px; /* Sesuai Spek PDF (18px) */
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
 }
@@ -585,10 +544,9 @@ footer {
     color: #ccc;
 }
 
-/* --- Tambahan Media Query untuk Halaman Detail --- */
 @media (max-width : 768px) {
     #detail-page {
-        padding-top: 60px; /* Sesuaikan dengan header mobile jika berbeda */
+        padding-top: 60px;
     }
 
     #back-to-home {
@@ -598,61 +556,63 @@ footer {
 
     .detail-hero {
         padding: 0 20px;
-        height: auto; /* Biarkan konten menentukan tinggi */
-        margin-top: -60px; /* Sesuaikan */
-        padding-top: 100px; /* Ruang untuk tombol kembali */
+        height: auto;
+        margin-top: -60px;
+        padding-top: 100px;
         padding-bottom: 40px;
     }
 
     .detail-content {
-        flex-direction: column; /* Tumpuk poster dan info */
+        flex-direction: column;
         text-align: center;
         gap: 20px;
     }
     
     .detail-poster {
-        width: 180px; /* Samakan dengan ukuran kartu di mobile */
+        width: 180px;
     }
     
     #detail-title {
-        font-size: 28px; /* Kecilkan sedikit */
+        font-size: 28px;
     }
 
     .meta-info {
         justify-content: center;
+    }
+    .cast-container {
+        flex-direction: column;
     }
 
     .more-details {
         padding: 20px;
     }
     
-    /* .details-top-section sudah flex-wrap, jadi aman */
+    .details-top-section {
+        display: flex;
+        flex-direction: column;
+    }
     
     .details-box {
-        width: 100%; /* Penuh di mobile */
+        width: 100%;
     }
     
     .episode-row {
-        /* Tumpuk di mobile */
         flex-direction: column;
         align-items: flex-start;
         padding: 15px;
     }
     
     .episode-row img {
-        width: 100%; /* Buat thumbnail lebar */
+        width: 100%;
         height: 150px; 
     }
 }
 
-
-/* --- Media Query untuk Responsif --- */
 @media (max-width : 768px)  {
     .navbar {
         padding: 0 20px;
     }
 
-    /* Kurangi padding di menu mobile */
     .menu li {
         margin: 0 8px;
     }
@@ -663,8 +623,8 @@ footer {
 
     .hero {
         padding: 0 20px;
-        align-items: center; /* Pusatkan di mobile */
-        text-align: center; /* Pusatkan di mobile */
+        align-items: center;
+        text-align: center;
     }
 
     .hero h1 {
@@ -677,41 +637,36 @@ footer {
     }
 
     .btn-cta {
-        width: 160px; /* Sedikit lebih besar untuk tombol play */
+        width: 160px;
         height: 40px;
         font-size: 14px;
     }
 
     .film-row {
-        padding: 20px; /* Kurangi padding di mobile */
+        padding: 20px;
     }
 
     .card-container {
-        /* Ukuran card lebih kecil di mobile */
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 16px;
     }
 
     .film-card img {
-        /* Sesuaikan ukuran gambar dengan grid */
-        width: 100%; /* Buat gambar mengisi card */
-        height: 210px; /* Tetapkan tinggi */
+        width: 100%;
+        height: 210px;
     }
 
-    /* Sesuaikan font di hover card mobile */
     .card-content h3 {
         font-size: 14px;
     }
     .card-content p {
         font-size: 10px;
-        -webkit-line-clamp: 2; /* Tetap 2 baris */
+        -webkit-line-clamp: 2;
         line-clamp: 2;
     }
 
-
     footer {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom di mobile */
+        grid-template-columns: repeat(2, 1fr);
         padding: 30px 20px;
     }
 }
-
