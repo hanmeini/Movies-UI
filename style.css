@@ -387,6 +387,263 @@ footer {
     margin-top: 15px;
     font-size: 28px; /* */
 }
+#detail-page {
+    width: 100%;
+    /* Beri ruang untuk header absolut/fixed Anda */
+    padding-top: 80px; 
+}
+
+/* Kelas utilitas untuk menyembunyikan/menampilkan halaman */
+.hidden {
+    display: none !important; /* Gunakan !important untuk memastikan */
+}
+
+/* Tombol Kembali */
+#back-to-home {
+    position: absolute;
+    top: 100px; /* Di bawah header (80px) + 20px padding */
+    left: 40px;
+    z-index: 5; /* Di atas hero, di bawah header */
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid #fff;
+}
+#back-to-home:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Hero Halaman Detail */
+.detail-hero {
+    height: 90vh; /* Sesuai Spek PDF */
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 60px;
+    /* Tarik ke atas di belakang header transparan */
+    margin-top: -80px; 
+}
+
+.detail-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* Efek blur dan gelap yang kuat */
+    filter: blur(20px) brightness(0.5);
+    transform: scale(1.1); /* Hindari tepi yang blur */
+    z-index: 1;
+}
+
+.detail-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.detail-poster {
+    width: 250px; /* Lebih besar dari kartu */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    flex-shrink: 0; /* Jangan biarkan gambar menyusut */
+}
+
+.detail-info {
+    max-width: 600px;
+}
+
+#detail-title {
+    font-size: 36px; /* Sesuai Spek PDF (32-36px) */
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.meta-info {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    color: #ccc;
+    margin: 10px 0;
+}
+
+#detail-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+
+/* --- Bagian Detail Tambahan --- */
+.more-details {
+    padding: 40px 60px;
+}
+
+/* PENTING: Bungkus .details-box dan .cast-list dalam <div> ini di HTML Anda */
+.details-top-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Agar responsif */
+}
+
+.details-box h2,
+.cast-list h2,
+.episodes-list h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.details-box {
+    width: 600px; /* Sesuai Spek PDF */
+    flex-shrink: 0;
+}
+
+.details-box p {
+    font-size: 16px; /* Sesuai Spek PDF (16-18px) */
+    line-height: 1.7;
+    color: #ccc;
+}
+.details-box p strong {
+    color: #fff;
+    min-width: 100px;
+    display: inline-block;
+}
+
+.cast-list {
+    width: 100%;
+    flex-grow: 1; /* Ambil sisa ruang */
+    min-width: 300px;
+}
+
+.cast-member {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.cast-member img {
+    width: 40px; /* Sesuai Spek PDF (40x40px) */
+    height: 40px; /* Sesuai Spek PDF (40x40px) */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cast-member span {
+    font-size: 16px; /* Sesuai Spek PDF (16px) */
+}
+
+/* Daftar Episode */
+.episodes-list {
+    width: 100%; /* Sesuai Spek PDF (approx 1200px) */
+}
+
+.episode-row {
+    width: 100%;
+    min-height: 64px; /* Sesuai Spek PDF (64px) */
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.episode-row:hover {
+    background-color: #333;
+}
+
+.episode-row img {
+    width: 80px; /* Sesuai Spek PDF (80x80px) */
+    height: 80px; /* Sesuai Spek PDF (80x80px) */
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.episode-info h3 {
+    font-size: 18px; /* Sesuai Spek PDF (18px) */
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.episode-info p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* --- Tambahan Media Query untuk Halaman Detail --- */
+@media (max-width : 768px) {
+    #detail-page {
+        padding-top: 60px; /* Sesuaikan dengan header mobile jika berbeda */
+    }
+
+    #back-to-home {
+        top: 80px;
+        left: 20px;
+    }
+
+    .detail-hero {
+        padding: 0 20px;
+        height: auto; /* Biarkan konten menentukan tinggi */
+        margin-top: -60px; /* Sesuaikan */
+        padding-top: 100px; /* Ruang untuk tombol kembali */
+        padding-bottom: 40px;
+    }
+
+    .detail-content {
+        flex-direction: column; /* Tumpuk poster dan info */
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .detail-poster {
+        width: 180px; /* Samakan dengan ukuran kartu di mobile */
+    }
+    
+    #detail-title {
+        font-size: 28px; /* Kecilkan sedikit */
+    }
+
+    .meta-info {
+        justify-content: center;
+    }
+
+    .more-details {
+        padding: 20px;
+    }
+    
+    /* .details-top-section sudah flex-wrap, jadi aman */
+    
+    .details-box {
+        width: 100%; /* Penuh di mobile */
+    }
+    
+    .episode-row {
+        /* Tumpuk di mobile */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    
+    .episode-row img {
+        width: 100%; /* Buat thumbnail lebar */
+        height: 150px; 
+    }
+}
 
 
 /* --- Media Query untuk Responsif --- */

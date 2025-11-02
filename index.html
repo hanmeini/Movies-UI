@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streaming Website - Cang & Kruk</title>
+    <link rel="shortcut icon" href="./assets/img/iconlogo.png" type="image/x-icon">
     <!-- Hubungkan ke file CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Menambahkan Font Awesome untuk ikon (opsional, tapi bagus untuk tombol play) -->
@@ -175,6 +176,86 @@
                 <span class="star" data-value="5">★</span>
             </div>
         </section>
+        <div id="detail-page" class="hidden">
+            
+            <!-- Tombol Kembali -->
+            <button id="back-to-home" class="btn-cta"><i class="fas fa-arrow-left"></i> Kembali</button>
+
+            <!-- Hero Section Halaman Detail (Sesuai Spek PDF: 90vh) -->
+            <section class="detail-hero">
+                <!-- Background Blur Dinamis -->
+                <div id="detail-hero-bg" class="detail-hero-bg"></div>
+                
+                <!-- Konten Hero -->
+                <div class="detail-content">
+                    <img id="detail-poster-img" src="https://source.unsplash.com/180x270/?movie,poster,action" alt="Poster Film" class="detail-poster">
+                    <div class="detail-info">
+                        <!-- Judul (Sesuai Spek PDF: 32-36px) -->
+                        <h1 id="detail-title">Judul Film</h1>
+                        <div class="meta-info">
+                            <span>2024</span>
+                            <span><i class="fas fa-star" style="color: gold;"></i> 8.5</span>
+                            <span>2j 15m</span>
+                        </div>
+                        <p id="detail-desc">Deskripsi film akan muncul di sini. Ini adalah sinopsis singkat dari film yang dipilih.</p>
+                        <button id="play-detail-btn" class="btn-cta">
+                            <i class="fas fa-play" style="margin-right: 8px;"></i> Play Episode 1
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bagian Detail Tambahan (Sesuai Spek PDF) -->
+            <section class="more-details">
+                
+                <!-- Details Box (Sesuai Spek PDF: Lebar 600px) -->
+                <div class="details-box">
+                    <h2>Details</h2>
+                    <p><strong>Director:</strong> John Doe</p>
+                    <p><strong>Writer:</strong> Jane Smith</p>
+                    <p><strong>Country:</strong> USA</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Release Date:</strong> 2024-10-25</p>
+                </div>
+
+                <!-- Cast List (Sesuai Spek PDF) -->
+                <div class="cast-list">
+                    <h2>Cast</h2>
+                    <div class="cast-member">
+                        <img src="https://placehold.co/40x40/EEE/333?text=C1" alt="Cast 1"> <!-- Avatar 40x40px -->
+                        <span>Aktor Pertama</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://placehold.co/40x40/EEE/333?text=C2" alt="Cast 2">
+                        <span>Aktor Kedua</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://placehold.co/40x40/EEE/333?text=C3" alt="Cast 3">
+                        <span>Aktor Ketiga</span>
+                    </div>
+                </div>
+
+                <!-- Seasons & Episodes (Sesuai Spek PDF) -->
+                <div class="episodes-list">
+                    <h2>Seasons & Episodes</h2>
+                    <div class="episode-row"> <!-- Row 64px -->
+                        <img src="https://placehold.co/80x80/555/FFF?text=E1" alt="E1"> <!-- Thumbnail 80x80px -->
+                        <div class="episode-info">
+                            <h3>1. Judul Episode Pertama</h3> <!-- Judul 18px -->
+                            <p>Deskripsi singkat episode pertama...</p>
+                        </div>
+                    </div>
+                    <div class="episode-row">
+                        <img src="https://placehold.co/80x80/555/FFF?text=E2" alt="E2">
+                        <div class="episode-info">
+                            <h3>2. Judul Episode Kedua</h3>
+                            <p>Deskripsi singkat episode kedua...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
 
     </main>
 
