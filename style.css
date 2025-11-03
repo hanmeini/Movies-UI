@@ -85,39 +85,35 @@ header {
 }
 
 .hero {
-    height: 90vh;
+    min-height: 90vh;
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 60px;
-    text-align: left;
     position: relative;
-    overflow: hidden;
+    isolation: isolate;
+    padding: 0 5%;
 }
 
-.hero::before {
+.hero::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/assets/img/bg-lgn.jpg') repeat;
-    background-size: cover;
-    filter: blur(6px);
-    animation: moveBg 30s linear infinite;
+    inset: 0;
     z-index: -1;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8) 0%,
+        rgba(0,0,0,0.5) 20%,
+        rgba(0,0,0,0) 70%
+    );
 }
 
-
-.hero h1 {
-    font-size: 64px;
-    font-weight: 700;
+.hero-title {
+    max-width: 300px;
+    height: auto;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
-    position: relative;
-    z-index: 2;
 }
 
 .hero p {
@@ -125,9 +121,9 @@ header {
     line-height: 28px;
     max-width: 494px;
     margin-bottom: 30px;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
     position: relative;
     z-index: 2;
+    color: #ffff;
 }
 
 .btn-cta {
@@ -621,24 +617,26 @@ footer {
     }
 
 
-    .hero {
+      .hero {
+        min-height: 80vh;
         padding: 0 20px;
         align-items: center;
         text-align: center;
     }
 
-    .hero h1 {
-        font-size: 36px;
+    .hero-title {
+        max-width: 300px;
+        margin-bottom: 16px;
     }
 
     .hero p {
-        font-size: 16px;
         max-width: 100%;
+        font-size: 14px;
+        margin-bottom: 20px;
     }
 
     .btn-cta {
-        width: 160px;
-        height: 40px;
+        padding: 12px 24px;
         font-size: 14px;
     }
 
